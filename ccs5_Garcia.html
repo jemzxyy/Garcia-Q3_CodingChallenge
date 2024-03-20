@@ -30,7 +30,8 @@
 				
 				//length replace,
 				var nameConcat = name1 + name2;
-				var totalChar = nameConcat.length;
+		    		var removeChar = nameConcat.replace(/[\s~`!@#$%^&*(){}\[\];:"'<,.>?\/\\|_+=-1234567890 ]/g, '');
+				var totalChar = removeChar.length;
 				
 				var calcuFlames = totalChar%6;
 					if (calcuFlames == 0){
