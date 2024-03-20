@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Coding Challenge 5
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: lightseagreen;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <h1> Modified FLAMES </h1>
+
+        <button onclick="flames()";>Match Names</button>
+        <h3 id="name"></h3>
+
+        <h4>FLAMES Result:</h4>
+        <h3 id="result"></h3>
+
+
+        <script>
+            function flames(){
+				var name1 = prompt("Please enter name of person 1: ");
+				var name2 = prompt("Please enter name of person 2: ");
+				document.getElementById("name").innerText = name1 + " + " + name2 + " = ?";
+				
+				//length replace,
+				var nameConcat = name1 + name2;
+				var totalChar = nameConcat.length;
+				
+				var calcuFlames = totalChar%6;
+					if (calcuFlames == 0){
+						document.getElementById("result").innerText = "Sweethearts";
+					}
+					else if (calcuFlames == 1){
+						document.getElementById("result").innerText = "Friends";
+					}
+					else if (calcuFlames == 2){
+						document.getElementById("result").innerText = "Lovers";
+					}
+					else if (calcuFlames == 3){
+						document.getElementById("result").innerText = "Acquaintances";
+					}
+					else if (calcuFlames == 4){
+						document.getElementById("result").innerText = "Marriage";
+					}
+					else if (calcuFlames == 5){
+						document.getElementById("result").innerText = "Enemies";
+					}
+					
+                
+            }
+        </script>
+    </body>
+</html>
