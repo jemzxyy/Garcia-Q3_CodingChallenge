@@ -15,7 +15,7 @@
     <body>
         <h1> Modified FLAMES </h1>
 
-        <button onclick="flames()";>Match Names</button>
+        <button onclick="flames()">Match Names</button>
         <h3 id="name"></h3>
 
         <h4>FLAMES Result:</h4>
@@ -30,8 +30,14 @@
 				
 				//length replace,
 				var nameConcat = name1 + name2;
-		    		var removeChar = nameConcat.replace(/[\s~`!@#$%^&*(){}\[\];:"'<,.>?\/\\|_+=-1234567890 ]/g, '');
-				var totalChar = removeChar.length;
+				var excludeChar = nameConcat.replace(/[^\w\s]|_/g, "").replace(/\s+/g, "").replace(/[0-9]/g, '');
+				var totalChar = nameConcat.length;
+				
+				var cedric = /[^\w\s]|_/g;
+					if (cedric.test(name1) || cedric.test(name2)) {
+						alert("Please removew special characters!");
+						return;
+					}
 				
 				var calcuFlames = totalChar%6;
 					if (calcuFlames == 0){
